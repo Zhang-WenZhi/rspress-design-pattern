@@ -27,4 +27,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: docs_build
-        BUILD_SCRIPT: pnpm run preview
+        # BUILD_SCRIPT: pnpm run preview
