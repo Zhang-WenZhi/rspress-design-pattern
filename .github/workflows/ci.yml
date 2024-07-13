@@ -14,13 +14,15 @@ jobs:
       uses: actions/checkout@v4
 
     - name: 安装依赖和项目打包
+      # run:
+      #   npm install pnpm -g
+      #   npm install http-server -g
+      # run:
+      #   pnpm install
       run:
-        npm install pnpm -g
         npm install http-server -g
-      run:
-        pnpm install
-      run:
-        pnpm run build
+        npm install
+        npm run build
 
     - name: 部署
       uses: JamesIves/github-pages-deploy-action@v4
