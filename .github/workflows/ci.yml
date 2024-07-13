@@ -1,36 +1,51 @@
-name: 打包RSPRESS项目
-on: push
+# 将静态内容部署到 GitHub Pages 的简易工作流程
+name: RSPRESS-WENZHI 静态内容部署到 GitHub Pages
 
+on:
+  # 仅在推送到默认分支时运行。
+  push:
+    branches: ['main']
+
+  # 这个选项可以使你手动在 Action tab 页面触发工作流
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages。
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# 允许一个并发的部署
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
-  npm-build:
-    name: npm-build工作
+  # 单次部署的工作描述
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-    - name: 读取仓库内容
-      uses: actions/checkout@v4
-
-    - name: 安装依赖
-      # run:
-      #   npm install pnpm -g
-      #   npm install http-server -g
-      # run:
-      #   pnpm install
-      run:
-        npm install   
-    - name: 项目打包
-      run:
-        npm run build
-
-    - name: 部署
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: doc_build
-        # BUILD_SCRIPT: http-server ./doc_build
-        BUILD_SCRIPT: npm run preview # 编译资源路径不对
-        # BUILD_SCRIPT: npm run dev # 一样是资源路径不对
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: 安装依赖
+        run: npm ci
+      - name: 编译
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload dist folder
+          path: './doc_build'
+      - name: 部署
+        id: deployment
+        uses: actions/deploy-pages@v4

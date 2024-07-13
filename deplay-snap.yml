@@ -1,0 +1,36 @@
+name: 打包RSPRESS项目
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  npm-build:
+    name: npm-build工作
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 读取仓库内容
+      uses: actions/checkout@v4
+
+    - name: 安装依赖
+      # run:
+      #   npm install pnpm -g
+      #   npm install http-server -g
+      # run:
+      #   pnpm install
+      run:
+        npm install   
+    - name: 项目打包
+      run:
+        npm run build
+
+    - name: 部署
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: doc_build
+        # BUILD_SCRIPT: http-server ./doc_build
+        BUILD_SCRIPT: npm run preview # 编译资源路径不对
+        # BUILD_SCRIPT: npm run dev # 一样是资源路径不对
