@@ -19,13 +19,13 @@ jobs:
         npm install http-server -g
       run:
         pnpm install
-      # run:
-      #   pnpm run build
+      run:
+        pnpm run build
 
     - name: 部署
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: docs_build
-        BUILD_SCRIPT: http-server ./docs_build
+        FOLDER: doc_build
+        BUILD_SCRIPT: http-server ./doc_build
