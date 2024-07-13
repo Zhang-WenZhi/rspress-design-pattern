@@ -13,7 +13,7 @@ jobs:
     - name: 读取仓库内容
       uses: actions/checkout@v4
 
-    - name: 安装依赖和项目打包
+    - name: 安装依赖
       # run:
       #   npm install pnpm -g
       #   npm install http-server -g
@@ -21,9 +21,9 @@ jobs:
       #   pnpm install
       run:
         npm install   
-    # - name: 项目打包
-    #   run:
-    #     npm run build
+    - name: 项目打包
+      run:
+        npm run build
 
     - name: 部署
       uses: JamesIves/github-pages-deploy-action@v4
