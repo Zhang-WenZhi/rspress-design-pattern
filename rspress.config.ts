@@ -2,8 +2,8 @@ import * as path from 'path';
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
-  // base: '/rspress-design-pattern/', # https://<USERNAME>.github.io/<REPO>/  base 设置为 '/<REPO>/'
-  base: './',
+  base: '/rspress-design-pattern/', // # https://<USERNAME>.github.io/<REPO>/  base 设置为 '/<REPO>/'
+  // base: './',
   root: path.join(__dirname, 'docs'),
   title: 'Rspress WenZhi',
   description: 'Rspack-based Static Site Generator',
