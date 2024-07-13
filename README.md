@@ -26,6 +26,6 @@ pnpm run dev
 pnpm run build
 # 本地预览产物
 pnpm run preview # 要先编译！
-pnpm i http-server
-http-server ./doc_build
+# pnpm i http-server
+# http-server ./doc_build # http-server 这个库多开几个app，重复关闭打开，它还会使用上一个app的缓存，有bug!!
 ```
