@@ -25,5 +25,5 @@ pnpm run dev
 # 生产环境构建
 pnpm run build
 # 本地预览产物
-pnpm run preview
+pnpm run preview # 要先编译！
 ```
