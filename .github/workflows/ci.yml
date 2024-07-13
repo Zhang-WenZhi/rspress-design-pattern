@@ -16,10 +16,11 @@ jobs:
     - name: 安装依赖和项目打包
       run:
         npm install pnpm -g
+        npm install http-server -g
       run:
         pnpm install
-      run:
-        pnpm run build
+      # run:
+      #   pnpm run build
 
     - name: 部署
       uses: JamesIves/github-pages-deploy-action@v4
@@ -27,4 +28,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: docs_build
-        # BUILD_SCRIPT: pnpm run preview
+        BUILD_SCRIPT: http-server ./docs_build

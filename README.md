@@ -26,4 +26,6 @@ pnpm run dev
 pnpm run build
 # 本地预览产物
 pnpm run preview # 要先编译！
+pnpm i http-server
+http-server ./doc_build
 ```
