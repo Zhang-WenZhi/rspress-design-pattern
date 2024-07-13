@@ -13,16 +13,17 @@ jobs:
     - name: 读取仓库内容
       uses: actions/checkout@v4
 
-    - name: 安装依赖和项目打包
+    - name: 安装依赖
       # run:
       #   npm install pnpm -g
       #   npm install http-server -g
       # run:
       #   pnpm install
       run:
-        npm install http-server -g
-        npm install
-        npm run build
+        npm install   
+    - name: 项目打包
+      run:
+          npm run build
 
     - name: 部署
       uses: JamesIves/github-pages-deploy-action@v4
@@ -30,4 +31,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: doc_build
-        BUILD_SCRIPT: http-server ./doc_build
+        # BUILD_SCRIPT: http-server ./doc_build
+        BUILD_SCRIPT: npm run preview
