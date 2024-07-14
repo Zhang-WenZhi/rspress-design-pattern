@@ -2,9 +2,9 @@
 pageType: home
 
 hero:
-  name: Rspress WenZhi
-  text: Rspack-based Static Site Generator
-  tagline: Rspress WenZhi tagline
+  name: 设计模式 WENZHI
+  text: 收集各编程语言设计模式
+  tagline: 创建型 结构型 行为型
   actions:
     - theme: brand
       text: Quick Start
@@ -16,22 +16,24 @@ hero:
     src: /rspress-icon.png
     alt: Rspress WenZhi Logo
 features:
-  - title: Blazing fast build speed
-    details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
+  - title: 设计模式是什么？
+    details: 设计模式是软件设计中常见问题的典型解决方案。 它们就像能根据需求进行调整的预制蓝图， 可用于解决代码中反复出现的设计问题。设计模式与方法或库的使用方式不同， 你很难直接在自己的程序中套用某个设计模式。 模式并不是一段特定的代码， 而是解决特定问题的一般性概念。
     icon: 🏃🏻‍♀️
-  - title: Support for MDX content writing
-    details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
+  - title: 模式和算法区别
+    details: 人们常常会混淆模式和算法， 因为两者在概念上都是已知特定问题的典型解决方案。 但算法总是明确定义达成特定目标所需的一系列步骤， 而模式则是对解决方案的更高层次描述。 同一模式在两个不同程序中的实现代码可能会不一样。算法更像是菜谱： 提供达成目标的明确步骤。 而模式更像是蓝图： 你可以看到最终的结果和模式的功能， 但需要自己确定实现步骤。
     icon: 📦
-  - title: Built-in full-text search
-    details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
+  - title: 模式包含哪些内容？
+    details: 意图部分简单描述问题和解决方案。动机部分将进一步解释问题并说明模式会如何提供解决方案。结构部分展示模式的每个部分和它们之间的关系。在不同语言中的实现提供流行编程语言的代码， 让读者更好地理解模式背后的思想。部分模式介绍中还列出其他的一些实用细节， 例如模式的适用性、 实现步骤以及与其他模式的关系。
     icon: 🎨
-  - title: Simpler I18n solution
-    details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
+  - title: 设计模式分类
+    details: 最基础的、 底层的模式通常被称为惯用技巧。 这类模式一般只能在一种编程语言中使用。最通用的、 高层的模式是构架模式。 开发者可以在任何编程语言中使用这类模式。 与其他模式不同， 它们可用于整个应用程序的架构设计。此外， 所有模式可以根据其意图或目的来分类。 本书覆盖了三种主要的模式类别：创建型模式提供创建对象的机制， 增加已有代码的灵活性和可复用性。结构型模式介绍如何将对象和类组装成较大的结构， 并同时保持结构的灵活和高效。行为模式负责对象间的高效沟通和职责委派。
     icon: 🌍
-  - title: Static site generation
-    details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
+  - title: Python 设计模式
+    details: 创建型（5种）：提供创建对象的机制;结构型（7种）：将对象和类组装成较大的结构;行为型（11种）：负责对象间的高效沟通和职责委派。单一原则（模块互相隔离，函数互相不影响）、依赖倒置原则（上层不依赖下层）、里氏替换（不能破坏父类执行流程）、开闭原则（对外拓展，对内关闭）、接口隔离（不需要的功能不必要都跑一编）(又称迪米特法则，又称最少知道原则)、合成复用（尽量使用合成/聚合的方式，而不是使用继承）
     icon: 🌈
-  - title: Providing multiple custom capabilities
-    details: Through its extension mechanism, you can easily extend theme UI and build process.
+    link: /rspress-design-pattern/py-design-pattern/index.html
+    activeMatch: "/py-design-pattern/"
+  - title: 设计模式6大设计原则
+    details: 单一原则（模块互相隔离，函数互相不影响）、依赖倒置原则（上层不依赖下层）、里氏替换（不能破坏父类执行流程）、开闭原则（对外拓展，对内关闭）、接口隔离（不需要的功能不必要都跑一编）(又称迪米特法则，又称最少知道原则)、合成复用（尽量使用合成/聚合的方式，而不是使用继承）
     icon: 🔥
 ---
